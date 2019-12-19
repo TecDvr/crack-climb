@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Landing from './components/Landing/Landing';
+import Crack from './components/Crack/Crack';
 
 // streamline as function
 
@@ -9,6 +10,7 @@ export default class App extends React.Component {
     return (
       <div>
         <Landing />
+        <Crack />
       </div>
     )
   }

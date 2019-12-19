@@ -6,6 +6,8 @@ export default class Landing extends React.Component {
         return (
             <div className='landing-container'>
                 <h1>crack climb</h1>
+
+                
             </div>
         )
     }
