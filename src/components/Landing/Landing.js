@@ -1,5 +1,6 @@
 import React from 'react'; 
 import { TweenMax, Power3 } from 'gsap';
+import { Link } from 'react-router-dom';
 import './Landing.css';
 
 export default class Landing extends React.Component {
@@ -23,6 +24,11 @@ export default class Landing extends React.Component {
                     ref={element => {this.title = element}}
                     >crack climb
                 </h1>
+                <Link
+                    style={{ textDecoration: 'none'}}
+                    to='/crack'>
+                        <button className='enterButton'>lets climb!</button>
+                </Link>
             </div>
         )
     }

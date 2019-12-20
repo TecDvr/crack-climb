@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Menu.css';
 
 export default class Menu extends React.Component {
@@ -12,7 +13,11 @@ export default class Menu extends React.Component {
     render() {
         return (
             <div>
-
+                <Link
+                    style={{ textDecoration: 'none'}}
+                    to='/'>
+                        <button className='homeButton'>home</button>
+                </Link>
             </div>
         )
     }

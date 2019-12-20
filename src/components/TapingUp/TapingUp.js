@@ -6,8 +6,8 @@ import './TapingUp.css';
 export default class TapingUp extends React.Component {
     render() {
         return (
-            <div>
-                
+            <div className='tapingContainer'>
+                <p>taping up section</p>
             </div>
         )
     }
