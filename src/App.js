@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 import './App.css';
 import Landing from './components/Landing/Landing';
 import Crack from './components/Crack/Crack';
@@ -10,9 +11,18 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <Landing />
-        <Crack />
-        <Footer />
+        <Route 
+          exact
+          path='/'
+          component={Landing}
+        />
+
+        <Route 
+          exact
+          path='/crack'
+          component={Crack}
+        />
+
       </div>
     )
   }
