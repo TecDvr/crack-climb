@@ -1,6 +1,6 @@
 .crackContainer {
     min-height: 100vh;
-    background-color: #7F8C53;
+    background-color: #5A88CC;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -18,9 +18,11 @@
 }
 
 .crackType {
+    position: relative;
     height: 90vh;
     width: 80vw;
     border-radius: 20px;
     background-color: white;
     margin: 20px 30px 20px 30px;
+    /* box-shadow: 1px 1px 12px 2px; */
 }

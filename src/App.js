@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Landing from './components/Landing/Landing';
 import Crack from './components/Crack/Crack';
+import Footer from './components/Footer/Footer';
 
 // streamline as function
 
@@ -11,6 +12,7 @@ export default class App extends React.Component {
       <div>
         <Landing />
         <Crack />
+        <Footer />
       </div>
     )
   }
