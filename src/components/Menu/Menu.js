@@ -27,26 +27,24 @@ export default class Menu extends React.Component {
             <div>
                 {this.state.open === false 
                     ?   <nav className='navBar'>
-                            <div id='myDIV' className='burger burger-rotate' onClick={() => this.openMenu()}>
+                            <div className='burger burger-rotate' onClick={() => this.openMenu()}>
                                 <div className='burger-lines'></div>
                             </div>
                         </nav>
-                    :   <nav className='navBar'>
-                            <div className='burger burger-rotate open myNav' onClick={() => this.closeMenu()}>
-                                <div className='burger-lines'></div>
-                                <div id='myNav' className='overlay'>
-                                    <div className='overlay-content'>
-                            
-                                    </div>
+                    :   <nav className='navBar'> 
+                            <div className='overlay myNav'>
+                                <div className='burger burger-rotate open' onClick={() => this.closeMenu()}>
+                                    <div className='burger-lines'></div>
+                                </div> 
+                                <div className='overlay-content'>
+                                    <Link
+                                        style={{textDecoration: 'none'}}
+                                        to='/'
+                                    >Home</Link>
                                 </div>
-                            </div>
+                            </div>            
                         </nav>
                 }
-                <Link
-                    style={{ textDecoration: 'none'}}
-                    to='/'>
-                        <button className='homeButton'>home</button>
-                </Link>
             </div>
         )
     }

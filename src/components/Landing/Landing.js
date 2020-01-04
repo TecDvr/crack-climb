@@ -1,7 +1,10 @@
 import React from 'react'; 
 import { TweenMax, Power3 } from 'gsap';
 import { Link } from 'react-router-dom';
+import Menu from '../Menu/Menu';
 import './Landing.css';
+
+// add climb disclaimer
 
 export default class Landing extends React.Component {
     constructor(props) {
@@ -19,6 +22,7 @@ export default class Landing extends React.Component {
     render() {
         return (
             <div className='landing-container'>
+                <Menu />
                 <h1  
                     className='title'
                     ref={element => {this.title = element}}

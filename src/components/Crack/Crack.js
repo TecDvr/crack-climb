@@ -1,27 +1,55 @@
 import React from 'react';
 import { Controller, Scene } from 'react-scrollmagic';
+import ScrollMagic from 'scrollmagic';
 import { Tween } from 'react-gsap';
-import TapingUp from '../TapingUp/TapingUp';
-import Foooter from '../Footer/Footer';
+import Footer from '../Footer/Footer';
 import Menu from '../Menu/Menu';
 import './Crack.css';
 
 export default class Crack extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
+        this.controller = new ScrollMagic.Controller();
+    }
 
-        }
+    componentDidMount() {
+        let scene = new ScrollMagic.Scene({
+            duration: 1000,
+            triggerElement: '.videoTrigger',
+            triggerHook: 0
+        })
+        .setPin(".videoTrigger") // pins the element for the the scene's duration
+        .addTo(this.controller); // assign the scene to the controller
+
+        const video = document.querySelector("video");
+
+        let accelamount = 0.1;
+        let scrollpos = 0;
+        let delay = 0;
+
+        scene.on("update", e => {
+        scrollpos = e.scrollPos / 1000;
+        });
+
+        setInterval(() => {
+        delay += (scrollpos - delay) * accelamount;
+        
+        video.currentTime = delay;
+        }, 33.3);
     }
     
     render() {
-        return (
+        return ( 
             <div className='crackContainer'>
-                <Menu />
+            <Menu />
                 <div className='intro'>
                     <p>this is the intro</p>
                 </div>
-                <Controller>
+                <div className='videoTrigger'>
+                    <video src='https://clips.vorwaerts-gmbh.de/VfE_html5.mp4' type='video/mp4'></video>
+                </div>
+
+                {/* <Controller>
                     <Scene duration={500} triggerElement={null} offset={200}>
                         {(progress) => (
                             <Tween
@@ -30,13 +58,14 @@ export default class Crack extends React.Component {
                                 totalProgress={progress}
                                 paused
                             >
-                                <div>
-                                    <TapingUp />
-                                </div>
+                                    <div className='videoTrigger'>
+                                        <TapingUp />
+                                    </div>
                             </Tween>
                         )}
                     </Scene>
-                </Controller>
+                </Controller> */}
+                
                 <Controller>
                     <Scene duration={500} triggerElement='.tapingContainer' offset={500}>
                         {(progress) => (
@@ -46,7 +75,9 @@ export default class Crack extends React.Component {
                                 totalProgress={progress}
                                 paused
                             >
-                                <div className='crackType finger'></div>
+                                <div className='crackType finger'>
+                                    <p>finger crack</p>
+                                </div>
                             </Tween>
                         )}
                     </Scene>
@@ -60,7 +91,9 @@ export default class Crack extends React.Component {
                                 totalProgress={progress}
                                 paused
                             >
-                                <div className='crackType hand'></div>
+                                <div className='crackType hand'>
+                                    <p>hand crack</p>
+                                </div>
                             </Tween>
                         )}
                     </Scene>
@@ -74,7 +107,9 @@ export default class Crack extends React.Component {
                                 totalProgress={progress}
                                 paused
                             >
-                                <div className='crackType fist'></div>
+                                <div className='crackType fist'>
+                                    <p>fist crack</p>
+                                </div>
                             </Tween>
                         )}
                     </Scene>
@@ -88,12 +123,14 @@ export default class Crack extends React.Component {
                                 totalProgress={progress}
                                 paused
                             >
-                                <div className='crackType offwidth'></div>
+                                <div className='crackType offwidth'>
+                                    <p>offwidth crack</p>
+                                </div>
                             </Tween>
                         )}
                     </Scene>
                 </Controller>
-                <Foooter />
+                <Footer />
             </div>
         )
     }

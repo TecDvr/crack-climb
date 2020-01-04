@@ -7,7 +7,11 @@ export default class TapingUp extends React.Component {
     render() {
         return (
             <div className='tapingContainer'>
-                <p>taping up section</p>
+                <div>
+                    <video src='https://clips.vorwaerts-gmbh.de/VfE_html5.mp4' type='video/mp4'></video>
+                </div>
+                
+
             </div>
         )
     }
